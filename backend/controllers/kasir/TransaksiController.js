@@ -7,7 +7,7 @@ const hargaTreatment = require("../../helpers/hargaTreatment");
 
 exports.getListTreatment = async (req, res) => {
   // parameters
-  var limit = parseInt(req.query.limit) || 16;
+  var limit = parseInt(req.query.limit) || 12;
   var offset = parseInt(req.query.offset) || 0;
   var nama = req.query.nama || "";
   var harga = parseInt(req.query.harga) || "";

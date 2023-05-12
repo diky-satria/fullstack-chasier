@@ -24,7 +24,7 @@ import {
 import {
   formatNumber,
   formatNumberNoRp,
-  // getTheFirstLetter,
+  getTheFirstLetter,
   formatDateHuman,
   transaksiPasienSelected,
 } from "../../../helpers";
@@ -50,7 +50,7 @@ export default function TransaksiPendingEdit() {
   const [noteModal, setNoteModal] = useState(""); //--------------------
   const [kodeRangeModal, setKodeRangeModal] = useState([]);
 
-  const [limit, setLimit] = useState(16);
+  const [limit, setLimit] = useState(12);
   const [offset, setOffset] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
@@ -255,7 +255,7 @@ export default function TransaksiPendingEdit() {
   };
 
   const fetchMore = () => {
-    setOffset(offset + 16);
+    setOffset(offset + 12);
   };
 
   const openModalRangeHar = (id, nama, harga, kode) => {
@@ -939,7 +939,7 @@ export default function TransaksiPendingEdit() {
                   onChange={(e) => {
                     setName(e.target.value);
                     setTreatment([]);
-                    setLimit(16);
+                    setLimit(12);
                     setOffset(0);
                     return;
                   }}
@@ -977,7 +977,7 @@ export default function TransaksiPendingEdit() {
                           width={100}
                           onClick={(e) => clickCurrentCard(e)}
                         >
-                          {/* <div
+                          <div
                             className="c-image"
                             width={100}
                             height={90}
@@ -1018,21 +1018,14 @@ export default function TransaksiPendingEdit() {
                                 </h1>
                               </div>
                             )}
-                          </div> */}
+                          </div>
                           <div className="c-price-container py-2">
-                            <span
-                              className="c-price"
-                              style={{
-                                width: "100%",
-                              }}
-                            >
+                            <span className="c-price">
                               <p
                                 style={{
-                                  fontSize: "20px",
-                                  lineHeight: "20px",
+                                  fontSize: "13px",
+                                  lineHeight: "12px",
                                   margin: "5px 0",
-                                  textAlign: "center",
-                                  fontWeight: "500",
                                 }}
                               >
                                 {t.nama}
@@ -1040,19 +1033,8 @@ export default function TransaksiPendingEdit() {
                               <div
                                 style={{
                                   fontSize: "13px",
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  alignItems: "center",
-                                  margin: "15px 0 25px 0",
                                 }}
                               >
-                                <div
-                                  style={{
-                                    fontSize: "14px",
-                                  }}
-                                >
-                                  {formatNumber(t.harga[0].value)}
-                                </div>
                                 {t.harga.length > 1 ? (
                                   <div
                                     className="badge badge-pill badge-secondary"
@@ -1065,6 +1047,13 @@ export default function TransaksiPendingEdit() {
                                 ) : (
                                   ""
                                 )}
+                                <div
+                                  style={{
+                                    fontSize: "16px",
+                                  }}
+                                >
+                                  {formatNumber(t.harga[0].value)}
+                                </div>
                               </div>
                             </span>
                             <span>
