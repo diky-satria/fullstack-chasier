@@ -1,0 +1,88 @@
+* {
+  font-size: 14px;
+}
+body {
+  background-color: rgb(226, 226, 226) !important;
+  overflow-x: hidden;
+}
+.c-content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* bootstrap table */
+label.filter-label {
+  width: 100%;
+  margin: 3px 0;
+}
+.form-control {
+  border-color: #12b0a2 !important;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+/* bootstrap table next */
+.pagination {
+  float: right !important;
+}
+
+/* ant */
+.ant-select-selector,
+.ant-input {
+  border: 1px solid #12b0a2 !important;
+}
+.ant-input:hover,
+.ant-input:focus,
+.ant-select-selector:hover,
+.ant-select-selector:focus {
+  border: 1px solid #12b0a2 !important;
+}
+.ant-tabs-nav-wrap {
+  justify-content: center !important;
+}
+
+/* react select custom */
+.css-13cymwt-control,
+.css-t3ipsp-control {
+  min-height: 29px !important;
+  border: 1px solid #12b0a2 !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+}
+.css-t3ipsp-control,
+.css-t3ipsp-control:hover,
+.css-t3ipsp-control:focus {
+  border-color: #12b0a2 !important;
+  box-shadow: none !important;
+}
+
+/* ant date panel */
+.ant-picker-panels {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* dashboard */
+.modal-dashboard .ant-modal-content,
+.modal-dashboard .ant-modal-header {
+  background-color: #f6f6f6 !important;
+}
+.modal-dashboard .card-body,
+.modal-dashboard .card {
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 10px rgb(243, 243, 243);
+}
+
+@media (max-width: 576px) {
+  .ant-picker-dropdown {
+    left: -20px !important;
+  }
+}
+@media (min-width: 576px) {
+  .ant-picker-panels {
+    flex-direction: row !important;
+  }
+}
