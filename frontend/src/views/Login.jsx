@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Input, Form } from "antd";
+import { Input, Form, Button } from "antd";
 import logo from "../img/2.png";
 import { Checkbox } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  loginApi,
-  authSuccessApiLogin,
-  authErrorDelete,
-} from "../redux/auth/action";
+import { loginApi, authSuccessApiLogin } from "../redux/auth/action";
+import { authErrorDelete } from "../redux/authError/action";
+
 import { useNavigate } from "react-router-dom";
 import axios from "../interceptor/axios";
 
@@ -21,7 +19,8 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isError, user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
+  const { isError, isLoading } = useSelector((state) => state.authError);
 
   useEffect(() => {
     cekRememberMe();
@@ -57,8 +56,6 @@ export default function Login() {
   };
 
   const login = (e) => {
-    e.preventDefault();
-
     let data = {
       username: username,
       password: password,
@@ -81,7 +78,7 @@ export default function Login() {
           </div>
         </div>
         <div className="c-login-content">
-          <form onSubmit={login}>
+          <form>
             <div className="form-group">
               <Form.Item>
                 <Input
@@ -139,7 +136,15 @@ export default function Login() {
               </Checkbox>
             </div>
             <div className="c-login-footer">
-              <button className="btn btn-lg c-btn-login">Login</button>
+              <Button
+                type="primary"
+                size="large"
+                className="btn btn-lg c-btn-login"
+                onClick={login}
+                loading={isLoading}
+              >
+                Login
+              </Button>
 
               <div
                 style={{

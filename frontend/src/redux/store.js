@@ -5,7 +5,10 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import reducer from "./reducer";
 
-const persistedReducer = persistReducer({ key: "root", storage }, reducer);
+const persistedReducer = persistReducer(
+  { key: "root", storage, blacklist: ["authError"] },
+  reducer
+);
 export const store = createStore(
   persistedReducer,
   {},
