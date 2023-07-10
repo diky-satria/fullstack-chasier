@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import axios from "../../../interceptor/axios";
 import logo from "../../../img/doctor.png";
-import logo_adadental from "../../../img/new-logo.png";
+import logo_adadental from "../../../img/2.png";
 
 // react icon
 import { AiOutlineAlignRight, AiFillCheckCircle } from "react-icons/ai";
@@ -2316,10 +2316,10 @@ export default function Transaksi() {
             <div className="col">
               <p style={{ fontSize: "30px", float: "right" }}>
                 <span style={{ fontWeight: "bold", fontSize: "30px" }}>
-                  ADA Dental
+                  DUMMY Clinic
                 </span>{" "}
                 <br />
-                +6285772282795
+                +628123456789
               </p>
             </div>
           </div>
