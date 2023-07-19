@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:8090", "https://frontend-kasir.dikysatria.net"],
+    origin: ["http://localhost:8090", "https://kasir.dikysatria.net"],
   })
 );
 

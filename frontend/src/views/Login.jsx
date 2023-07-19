@@ -159,7 +159,7 @@ export default function Login() {
                     fontSize: "12px",
                   }}
                 >
-                  @Copyright 2023 Harvest Dental Care
+                  @Copyright 2023 Dummy Clinic Care
                 </div>
                 <div
                   style={{
